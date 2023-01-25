@@ -2,6 +2,7 @@ pkgname=blendos-first-setup
 pkgver=1.0
 pkgrel=1
 pkgdesc='First Setup for blendOS'
+depends=('python-gobject' 'gtk4')
 url='https://github.com/blend-os/blendos-first-setup'
 arch=('any')
 license=('GPL-3.0')
