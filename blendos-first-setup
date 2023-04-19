@@ -1,0 +1,2 @@
+#!/bin/sh
+exec electron /usr/lib/blendos-first-setup/blendos-first-setup.asar "$@"
