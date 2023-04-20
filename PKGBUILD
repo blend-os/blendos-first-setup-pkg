@@ -1,7 +1,7 @@
 # Maintainer: Rudra Saraswat <rs2009@ubuntu.com>
 
 pkgname='blendos-first-setup-git'
-pkgver=r5.ac8bc27
+pkgver=r7.cb832f7
 pkgrel=1
 _electronversion=22
 pkgdesc="A first setup app designed for blendOS"
@@ -65,5 +65,6 @@ package() {
 
     install -Dm755 "${srcdir}/first-setup/${pkgname%-git}-autostart.desktop" -t \
         "${pkgdir}"/etc/xdg/autostart/
+     install -Dm755 "${srcdir}"/first-setup/scripts/* -t "${pkgdir}"/usr/bin/
     install -Dm755 "${srcdir}/${pkgname%-git}" -t "${pkgdir}"/usr/bin/
 }
