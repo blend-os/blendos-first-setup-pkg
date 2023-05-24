@@ -12,7 +12,7 @@ depends=("electron${_electronversion}")
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
 makedepends=("electron${_electronversion}" 'git' 'npm')
-source=('first-setup::git+https://github.com/blend-os/blendos-first-setup.git'
+source=('first-setup::git+file://[BASE_ASSEMBLE_PATH]/projects/blendos-first-setup'
         'blendos-first-setup')
 sha256sums=('SKIP'
             'f7648e90ded1e1d0176f0f6b57a070b0c540981f9f6eb00a5cb27c8fe3b41b1c')
