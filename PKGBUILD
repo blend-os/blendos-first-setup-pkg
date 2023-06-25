@@ -3,15 +3,14 @@
 pkgname='blendos-first-setup-git'
 pkgver=r7.cb832f7
 pkgrel=1
-_electronversion=22
 pkgdesc="A first setup app designed for blendOS"
 arch=('x86_64' 'i686')
 url="https://github.com/blend-os/blendos-first-setup"
 license=('GPL3')
-depends=("electron${_electronversion}")
+depends=("electron")
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
-makedepends=("electron${_electronversion}" 'git' 'npm')
+makedepends=("electron" 'git' 'npm')
 source=('first-setup::git+file://[BASE_ASSEMBLE_PATH]/projects/blendos-first-setup'
         'blendos-first-setup')
 sha256sums=('SKIP'
@@ -32,8 +31,8 @@ build() {
     cd "${srcdir}/first-setup"
     npm config set cache "${srcdir}/npm-cache"
     export NODE_ENV=production
-    electronDist="/usr/lib/electron${_electronversion}"
-    electronVer="$(sed s/^v// /usr/lib/electron${_electronversion}/version)"
+    electronDist="/usr/lib/electron"
+    electronVer="$(sed s/^v// /usr/lib/electron/version)"
     npm run icons
     npm run pack -- -c.electronDist=${electronDist} \
         -c.electronVersion=${electronVer} --publish never
